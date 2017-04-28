@@ -39,9 +39,18 @@ n_gilds <- read_csv("n_gilds_jan_feb_mar.csv")
 
 
 n_gilds %>% ggplot(aes(month,n_gilds)) + 
-  geom_bar(aes(fill=domain), position = "dodge", stat="identity")
+  geom_bar(aes(fill=domain), position = "dodge", stat="identity") +
+  theme(axis.title = element_text(), axis.title.x = element_blank()) + 
+  labs(y="Number of Gilds")
 
 
 
+n_posts <- read_csv("top_sr_jan_feb_mar.csv")
+
+n_posts %>% ggplot(aes(month,n_posts)) + 
+  geom_bar(aes(fill=subreddit), position = "dodge", stat="identity") +
+  scale_y_continuous(labels=comma) +
+  theme(axis.title = element_text(), axis.title.x = element_blank()) + 
+  labs(y="Number of Posts")
 
 
