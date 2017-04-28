@@ -65,11 +65,11 @@ t_d_sr <- read_csv("top_t_d_sr.csv")
 
 t_d_sr %>% 
   mutate(rank=row_number()) %>%
-  filter(rank <= 10) %>%
-  ggplot(aes(subreddit, total_score_sum)) + 
+  filter(rank <= 20) %>%
+  ggplot(aes(subreddit,total_score_sum)) + 
   geom_bar(aes(fill=subreddit),stat="identity") +
   scale_y_continuous(labels=comma)+
-  theme(axis.title = element_text(), axis.title.x = element_blank()) + 
+  theme(axis.title = element_text(), axis.title.x = element_blank(),  axis.text.x=element_blank()) + 
   labs(y="Total Points") +
   ggtitle("Total non-The_Donald points accrued by top T_D posters")
 
