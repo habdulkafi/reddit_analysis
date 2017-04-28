@@ -18,6 +18,7 @@ plot(grph,vertex.label=NA, vertex.size= 2)
 
 V(grph)$type <- TRUE
 V(grph)[data$author]$type <- FALSE
+E(grph)$weight <- scale(data$total_score,center=FALSE)
 plot( grph, layout=layout_as_bipartite, vertex.label=NA, vertex.size=2 )
 
 bgrph <- bipartite.projection(grph)
