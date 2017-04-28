@@ -56,6 +56,6 @@ n_posts %>% ggplot(aes(month,n_posts)) +
   geom_bar(aes(fill=subreddit), position = "dodge", stat="identity") +
   scale_y_continuous(labels=comma) +
   theme(axis.title = element_text(), axis.title.x = element_blank()) + 
-  labs(y="Number of Posts")
-
+  labs(y="Number of Posts") +
+  ggtitle("Number of posts on top 10 Subreddits for 2017")
 
