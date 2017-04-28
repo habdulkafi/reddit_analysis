@@ -32,7 +32,12 @@ plot( grph, layout=layout.auto, vertex.label=NA, vertex.size=2 )
 day_data <- read_csv("t_d_n_posts_oct_nov_dec.csv")
 
 
-day_data %>% ggplot(aes(day_of_month, n_posts)) + geom_col()
+day_data %>% ggplot(aes(day_of_month, n_posts)) + 
+  geom_col() +
+  theme(axis.title = element_text()) +
+  ylab("Number of Posts") + 
+  xlab("Date") +
+  ggtitle("Posts per day on r/The_Donald")
 
 
 n_gilds <- read_csv("n_gilds_jan_feb_mar.csv")
