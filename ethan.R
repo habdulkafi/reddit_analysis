@@ -17,18 +17,19 @@ visualize <- function( filename, n){
   actual_defaults <- names(V(g))[names(V(g)) %in% defaults]
   g <- delete_vertices(g, actual_defaults)
   g <- delete_vertices(g, "The_Donald")
+  g <- delete_vertices(g, which(degree(g) <= 1))
   png(filename = paste0("images/", filename, ".png"), width = 1920, height = 1080)
   plot(g, layout = layout.auto, vertex.size=2, vertex.label.dist=.5, 
-       vertex.label.degree=pi, vertex.label.cex=1.5, main=filename)
+       vertex.label.degree=pi, vertex.label.cex=1, main=filename)
   dev.off()
 }
 
 
-
+# visualize("b4_election_translated", 1)
 files <- c("b4_election_translated", "after_election_translated", "b4_algo1_translated",
   "after_algo1_translated", "b4_inaug_translated", "after_inaug_translated", 
   "b4_algo2_translated", "after_algo2_translated")
 
 for (file in files) {
-  visualize(file, 2)
+  visualize(file, 1)
 }
