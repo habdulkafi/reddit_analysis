@@ -73,3 +73,40 @@ t_d_sr %>%
   labs(y="Total Points") +
   ggtitle("Total non-The_Donald points accrued by top T_D posters")
 
+
+daily_score_t_d <- read_csv("daily_score_t_d.csv")
+
+
+daily_score_t_d %>% ggplot(aes(day_of_month, total_score)) + 
+  geom_col() +
+  theme(axis.title = element_text()) +
+  ylab("Total Score") + 
+  xlab("Date") +
+  ggtitle("Total Score per day on r/The_Donald")
+
+
+
+daily_score <- read_csv("daily_score_all_r.csv")
+
+
+daily_score %>% ggplot(aes(day_of_month, total_score)) + 
+  geom_col() +
+  theme(axis.title = element_text()) +
+  ylab("Total Score") + 
+  xlab("Date") +
+  ggtitle("Total Score per day on Reddit")
+
+
+
+daily_score_all_time <- read_csv("daily_score_all_r_all_time.csv")
+
+
+daily_score_all_time %>% ggplot(aes(day_of_month, total_score)) + 
+  geom_col() +
+  theme(axis.title = element_text()) +
+  ylab("Total Score") + 
+  xlab("Date") +
+  ggtitle("Total Score per day on Reddit")
+
+
+
