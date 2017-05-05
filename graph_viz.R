@@ -5,7 +5,7 @@ library(scales)
 library(dplyr)
 
 
-data <- read_csv("link_counter_2.csv")
+data <- read_csv("b4_algo1_500_100_2.csv")
 
 data <- data %>% filter(n_links > 1)
 grph <- graph.data.frame(data, directed = F)

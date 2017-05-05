@@ -3,9 +3,9 @@ from collections import defaultdict, Counter
 import itertools
 
 
-df = pd.read_csv("top_2000_1500.csv")
+df = pd.read_csv("data/after_inaug_500_100_2.csv")
 
-df = df[["author","subreddit"]]
+df = df[["author", "subreddit"]]
 
 
 d = defaultdict(list)
@@ -23,6 +23,6 @@ c = [(key[0], key[1], counted[key]) for key in counted]
 
 df = pd.DataFrame(c,columns=["subreddit1", "subreddit2", "n_links"])
 
-df.to_csv("link_counter_2.csv",index=False,header=["subreddit1", "subreddit2", "n_links"])
+df.to_csv("data/after_inaug_translated.csv",index=False,header=["subreddit1", "subreddit2", "n_links"])
 
 
